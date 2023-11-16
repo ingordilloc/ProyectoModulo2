@@ -16,7 +16,6 @@ class EnlacesModel{
             "libroPrestado"=> "View/librosPrestados.php",
             "login" => "View/usuario/login.php",
             "logout" => "View/usuario/logout.php",
-            "inscripcioncategoria" => "View/inscripcioncategoria.php",
             "crearUsuario" => "View/usuario/nuevoUsuario.php",
             "grafico" => "View/grafica.php",
             default => "View/error.php"

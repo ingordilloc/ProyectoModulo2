@@ -2,8 +2,17 @@
 use Controller\UsuarioController;
 
 $usuario = new UsuarioController();
+
+$resultado = $usuario->login();
+if($resultado === false){
+    echo "<div class='alert alert-success mt-3' role=alert'>
+    Error de en los datos</div>";
+}
+
+
+
 ?>
-<h1>Inicia con tu Usuario</h1>
+<h1>Iniciar</h1>
 <div class="container">
 
     <form method="POST" id="formulario" data-intro='Formulario del Usuario'>
@@ -41,12 +50,32 @@ $usuario = new UsuarioController();
         
     </form>
      
-<?php 
-$resultado = $usuario->login();
-if($resultado === false){
-    echo "<div class='alert alert-success mt-3' role=alert'>
-    Error de en los datos</div>";
+
+</div>
+
+<script>
+     introJs().setOptions({
+           showProgress: true,
+        }).start()
+
+     document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("formulario").addEventListener('submit', validarFormulario); 
+});
+
+function validarFormulario(evento) {
+    evento.preventDefault();
+    let password = document.getElementById('password').value;
+    if (password.length < 2) { 
+        $.passwordError(); 
+    return; 
+  }
+  this.submit(); 
 }
 
-?>
-</div>
+$.passwordError =  function() {
+    let element = document.getElementById("passwordError");
+    element.removeAttribute("hidden");
+    $( "#passwordError" ).dialog();
+    //$("#passwordError").show();
+  };
+</script>

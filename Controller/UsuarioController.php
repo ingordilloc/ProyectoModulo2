@@ -7,6 +7,7 @@ use Model\UsuarioModel;
 class UsuarioController{   
 
 public function login(){
+    $token = filter_input(INPUT_POST, 'token', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     if(!empty($_POST['usuario']) && !empty($_POST['password']) ){
         $usuario = strClean(($_POST['usuario']));
         $password = strClean(($_POST['password']));

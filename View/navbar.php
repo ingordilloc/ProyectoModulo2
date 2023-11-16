@@ -7,6 +7,7 @@
       LibrosEdiTech
     </a>
   </div>
+
 </nav>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,10 +24,8 @@
         <li class="nav-item">
           <a class="nav-link" href="index.php?action=contacto">Contacto</a>
         </li>
-        
         <?php
         if (!empty($_SESSION['id']) && ($_SESSION['rol'] )) {
-
         ?>
         <li class="nav-item">
           <a class="nav-link" href="index.php?action=libros">Libros</a>

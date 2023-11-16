@@ -73,5 +73,8 @@ foreach ($listado as $row  =>  $item) {
 
 }
 
+echo "<li class='nav-item'>
+<a class='nav-link' href='index.php?action=grafico'>Grafica de Libros</a>
+</li>"
 
 ?>
